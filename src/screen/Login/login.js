@@ -81,7 +81,7 @@ class Login extends React.Component {
                     <Ionicons name="arrow-back-outline" size={50} color={"#000"}/>
                 </TouchableOpacity>
                 <Image source={require("./asset/Logo.png")} style={styleLogin.logo}/>
-                <Text style={styleLogin.text1}>Belum punya akun? <Text style={styleLogin.text2}>Buat akun baru</Text></Text>
+                <Text style={styleLogin.text1}>Belum punya akun? <Text style={styleLogin.text2} onPress={() => this.props.navigation.navigate('Register')}>Buat akun baru</Text></Text>
                 <View style={styleLogin.boxEmail}>
                     <TextInput 
                     style={styleLogin.inputEmail} 
