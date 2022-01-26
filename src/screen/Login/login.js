@@ -45,16 +45,19 @@ class Login extends React.Component {
                 } else if (respon.data.role  === "NSB") {
                     console.log('SUCCESS => ' + JSON.stringify(respon));
                     this.saveToken('token', respon.data.token)
+                    this.saveToken('role', respon.data.role)
                         .then(() => this.props.navigation.replace("DashNasabah"))
                         .catch ((e) => console.log('==> Token status: ' + e))
                 } else if (respon.data.role  === "P1") {
                     console.log('SUCCESS => ' + JSON.stringify(respon));
                     this.saveToken('token', respon.data.token)
+                    this.saveToken('role', respon.data.role)
                         .then(() => this.props.navigation.replace("DashP1"))
                         .catch ((e) => console.log('==> Token status: ' + e))
                 } else if (respon.data.role  === "P2") {
                     console.log('SUCCESS => ' + JSON.stringify(respon));
                     this.saveToken('token', respon.data.token)
+                    this.saveToken('role', respon.data.role)
                         .then(() => this.props.navigation.replace("DashP2"))
                         .catch ((e) => console.log('==> Token status: ' + e))
                 } else {
@@ -67,8 +70,8 @@ class Login extends React.Component {
 
     saveToken = async (key, value) => {
         try {
-            let dataStringfy = JSON.stringify(value)
-            await AsyncStorage.setItem(key, dataStringfy);
+            // let dataStringfy = JSON.stringify(value)
+            await AsyncStorage.setItem(key, value);
         } catch (error) {
             console.log("Error: " + error);
         }
