@@ -2,6 +2,7 @@ import React from "react";
 import Login from "../screen/Login/login";
 
 // IMPORT FILE ROUTE
+import Splashscreen from "../screen/splashcreen/splashscreen";
 import DashNasabah from "../screen/Dashboard/Dashboard Nasabah/dashNasabah";
 import DashP1 from "../screen/Dashboard/Dashboard_Pengurus1/dashP1";
 import DashP2 from "../screen/Dashboard/Dashboard_Pengurus2/dashP2";
@@ -18,6 +19,7 @@ class Route extends React.Component{
         return(
             <NavigationContainer>
                 <Stack.Navigator>
+                    <Stack.Screen name="Splashscreen" component={Splashscreen} options={{headerShown: false}}/>
                     <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
                     <Stack.Screen name="Register" component={Register} options={{headerShown: false}}/>
                     <Stack.Screen name="DashNasabah" component={DashNasabah} options={{headerShown: false}}/>

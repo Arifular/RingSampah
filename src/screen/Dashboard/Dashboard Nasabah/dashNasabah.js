@@ -28,7 +28,8 @@ class DashNasabah extends React.Component{
 
     removeDataStorage = async () => {
         try {
-            await AsyncStorage.clear()
+            await AsyncStorage.removeItem('role')
+            await AsyncStorage.removeItem('token')
             .then(() => {
                 this.props.navigation.replace('Login')
             })
