@@ -46,7 +46,7 @@ class Login extends React.Component {
                     console.log('SUCCESS => ' + JSON.stringify(respon));
                     this.saveToken('token', respon.data.token)
                     this.saveToken('role', respon.data.role)
-                        .then(() => this.props.navigation.replace("DashNasabah"))
+                        .then(() => this.props.navigation.replace("HomeNsb"))
                         .catch ((e) => console.log('==> Token status: ' + e))
                 } else if (respon.data.role  === "P1") {
                     console.log('SUCCESS => ' + JSON.stringify(respon));
