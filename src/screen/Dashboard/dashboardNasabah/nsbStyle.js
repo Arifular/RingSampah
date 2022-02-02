@@ -3,8 +3,9 @@ import { StyleSheet } from "react-native";
 export const styleNSB = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        padding: 25,
+        backgroundColor: '#FFF',
+        paddingHorizontal: 25,
+        paddingTop: 25,
     },
     img: {
         alignSelf: 'center',
