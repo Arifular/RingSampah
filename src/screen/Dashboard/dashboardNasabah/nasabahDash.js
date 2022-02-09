@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, Image, FlatList, ScrollView } from 'react-native';
 import { styleNSB } from './nsbStyle';
 import AsyncStorage from "@react-native-async-storage/async-storage"
@@ -41,8 +41,9 @@ class Nsb extends React.Component {
                 biodata: respon.user,
                 book: respon.buku,
             })
-            console.log(this.state.biodata)
-            console.log(this.state.book)
+            console.log("ini dari biodata" + this.state.biodata)
+            console.log("untuk tampilkan gambar" + this.state.biodata.profile)
+            console.log("ini dari book" + this.state.book)
         })
         .catch((err) => console.log('Error fetch data: ' + err))
         .finally(() => {
@@ -55,8 +56,9 @@ class Nsb extends React.Component {
         const Table = () => {
             const item = () => {
                 return this.state.book.map((value, index) =>
-                    <ScrollView>
-                        <View style={{ flexDirection: 'row', }} key={index}>
+                <View>
+                    <ScrollView >
+                        <View style={{ flexDirection: 'row', }}>
                             <View style={{
                                 width: 57.5,
                                 alignItems: 'center',
@@ -115,6 +117,7 @@ class Nsb extends React.Component {
                             </View>
                         </View>
                     </ScrollView>
+                </View>    
                 )
             }
     
@@ -201,8 +204,9 @@ class Nsb extends React.Component {
         return (
             <View style={styleNSB.container}>
                 <Image source={require('./assets/logo.png')} style={styleNSB.img} />
+
                 <View style={styleNSB.bcc}>
-                    <Image source={{uri: `http://peaceful-castle-64522.herokuapp.com${this.state.biodata.profile}`}} style={styleNSB.pp} />
+                    <Image source={{uri : `http://peaceful-castle-64522.herokuapp.com${this.state.biodata.profile}`}} style={styleNSB.pp} />
                     <View style={styleNSB.boxText}>
                         <Text style={styleNSB.txt1}>{this.state.biodata.name}</Text>
                         <Text style={styleNSB.txt2}>{this.state.biodata.email}</Text>
