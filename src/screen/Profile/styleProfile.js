@@ -14,10 +14,24 @@ export const StyleProfile = StyleSheet.create({
     textProfile: {
         fontSize:35, 
         color: '#000',
+        alignSelf: 'center',
+    },
+    boxPP : {
+        flexDirection: 'row',
+        alignSelf: 'center',
+    },
+    boxBtn: {
+        justifyContent: 'flex-end',
+        marginLeft: 10,
+        marginBottom: 10,
     },
     imagePP: {
-        alignSelf: 'center',
-        marginTop: 20
+        height: 130,
+        width: 130,
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: "#000",
+        marginLeft: 50,
     },
     boxEmail: {
         paddingHorizontal: 15,
@@ -30,7 +44,6 @@ export const StyleProfile = StyleSheet.create({
     },
     inputEmail: {
         color: "#000",
-        // backgroundColor: "green",
         fontSize: 16,
     },
     textAtas: {
@@ -50,7 +63,6 @@ export const StyleProfile = StyleSheet.create({
     },
     inputPass : {
         color: "#000",
-        // backgroundColor: "red",
         fontSize: 16,
         width: "90%"
     },
@@ -58,8 +70,6 @@ export const StyleProfile = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 10,
-        borderWidth: 1,
-        borderColor: "#000",
         marginBottom: 24,
         marginTop: 15,
         backgroundColor: '#4AB767'
@@ -67,6 +77,7 @@ export const StyleProfile = StyleSheet.create({
     textButton: {
         fontSize: 25,
         alignSelf: 'center',
-        color: '#000'
+        color: '#FFF',
+        fontWeight: 'bold'
     }
 });

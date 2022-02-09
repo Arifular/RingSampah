@@ -6,7 +6,6 @@ export const styleLogin = StyleSheet.create({
         backgroundColor: "#FFF",
         flex: 1,
         paddingVertical: 25,
-        // alignItems: "center",
     },
     logo: {
         width: 100,
@@ -46,21 +45,17 @@ export const styleLogin = StyleSheet.create({
     },
     inputEmail: {
         color: "#000",
-        // backgroundColor: "green",
         fontSize: 16,
     },
     inputPass : {
         color: "#000",
-        // backgroundColor: "red",
         fontSize: 16,
         width: "90%"
     },
     btnMasuk : {
         paddingVertical: 20,
-        // paddingHorizontal: 15,
         borderRadius: 10,
         backgroundColor: "#4AB767",
-        // flexDirection: "column-reverse",
     },
     text3: {
         fontSize: 20,

@@ -25,10 +25,8 @@ export const styleNSB = StyleSheet.create({
         borderRadius: 100,
         borderWidth: 1,
         alignItems: "center",
-    },
-    imgPP: {
-        height: 85,
-        width: 85,
+        borderColor: "#000",
+
     },
     boxText: {
         marginLeft: 20,

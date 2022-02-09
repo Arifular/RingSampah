@@ -7,13 +7,12 @@ export const StyleMenu = StyleSheet.create({
         paddingVertical: 25,
         paddingHorizontal: 25,
     },
-    container2: {
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-    },
     textMenu: {
         fontSize:35, 
-        color: '#000'
+        color: '#000',
+        fontWeight: 'bold',
+        marginBottom: 20,
+        alignSelf: 'center',
     },
     containerBox: {
        justifyContent: 'space-between',
@@ -26,6 +25,18 @@ export const StyleMenu = StyleSheet.create({
         alignItems: "center",
     },
     textBox: {
+        fontSize: 35,
+        color: '#000'
+    },
+    btn: {
+        paddingHorizontal: 0,
+        paddingVertical: 5,
+        backgroundColor: "#ff4757",
+        alignItems: "center",
+        borderRadius: 10,
+        marginTop: 350
+    },
+    textBtn: {
         fontSize: 35,
         color: '#000'
     }
