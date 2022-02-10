@@ -44,7 +44,7 @@ export default class Profile extends Component {
   }
 
   dataUser = () => {
-    fetch('http://peaceful-castle-64522.herokuapp.com/api/nasabah/profile', {
+    fetch('http://peaceful-castle-64522.herokuapp.com/api/profile', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
@@ -72,7 +72,7 @@ export default class Profile extends Component {
   }
 
   editUser = () => {
-    fetch(`http://peaceful-castle-64522.herokuapp.com/api/nasabah/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}&password=${this.state.password}&profile=${this.state.profile}`, {
+    fetch(`http://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}&password=${this.state.password}&profile=${this.state.profile}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
