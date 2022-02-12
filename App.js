@@ -3,7 +3,7 @@ import Navigation from "./src/screen/navigation/navigation";
 
 const App = () => {
   return(
-    <Navigation/>
+    <Navigation />
   )
 }
 

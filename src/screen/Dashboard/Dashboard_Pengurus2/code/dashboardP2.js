@@ -61,53 +61,55 @@ class DashboardP2 extends React.Component {
     }
 
     Table = () => {
-        const item = ({ item }) => {
-            return this.state.log.map((value, index) =>
+        const Item = () => {
+            return (
                 <ScrollView>
-                    <View style={{ flexDirection: 'row', }}>
-                        <View style={{
-                            width: 57.5,
-                            alignItems: 'center',
-                            borderWidth: 1,
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#000' }}>{value.id}</Text>
+                    {this.state.log.map((value, index) => (
+                        <View style={{ flexDirection: 'row', }}>
+                            <View style={{
+                                width: 57.5,
+                                alignItems: 'center',
+                                borderWidth: 1,
+                            }}>
+                                <Text style={{ fontSize: 18, color: '#000' }}>{value.id}</Text>
+                            </View>
+                            <View style={{
+                                width: 104,
+                                alignItems: 'center',
+                                borderWidth: 1,
+                            }}>
+                                <Text style={{ fontSize: 18, color: '#000' }}>{value.updated_at}</Text>
+                            </View>
+                            <View style={{
+                                width: 136,
+                                borderWidth: 1,
+                                alignItems: 'center'
+                            }}>
+                                <Text style={{ fontSize: 18, color: '#000', }}>{value.category}</Text>
+                            </View>
+                            <View style={{
+                                width: 100,
+                                alignItems: 'center',
+                                borderWidth: 1,
+                            }}>
+                                <Text style={{ fontSize: 18, color: '#000' }}>{value.quantity}</Text>
+                            </View>
+                            <View style={{
+                                width: 109,
+                                alignItems: 'flex-start',
+                                borderWidth: 1,
+                            }}>
+                                <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.sell_price}</Text>
+                            </View>
+                            <View style={{
+                                width: 136,
+                                alignItems: 'flex-start',
+                                borderWidth: 1,
+                            }}>
+                                <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.total_price}</Text>
+                            </View>
                         </View>
-                        <View style={{
-                            width: 104,
-                            alignItems: 'center',
-                            borderWidth: 1,
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#000' }}>{value.updated_at}</Text>
-                        </View>
-                        <View style={{
-                            width: 136,
-                            borderWidth: 1,
-                            alignItems: 'center'
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#000', }}>{value.category}</Text>
-                        </View>
-                        <View style={{
-                            width: 100,
-                            alignItems: 'center',
-                            borderWidth: 1,
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#000' }}>{value.quantity}</Text>
-                        </View>
-                        <View style={{
-                            width: 109,
-                            alignItems: 'flex-start',
-                            borderWidth: 1,
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.sell_price}</Text>
-                        </View>
-                        <View style={{
-                            width: 136,
-                            alignItems: 'flex-start',
-                            borderWidth: 1,
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.total_price}</Text>
-                        </View>
-                    </View>
+                    ))}
                 </ScrollView>
             )
         }
@@ -168,10 +170,11 @@ class DashboardP2 extends React.Component {
                             <Text style={{ fontSize: 18, color: '#fff' }}>Total</Text>
                         </View>
                     </View>
-                    <FlatList
+                    {/* <FlatList
                         data={this.state.log}
                         renderItem={item}
-                        keyExtractor={(item, index) => index.toString()} />
+                        keyExtractor={(item, index) => index.toString()} /> */}
+                    <Item />
                 </View>
             </ScrollView>
         )
