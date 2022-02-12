@@ -9,6 +9,7 @@ class Nsb extends React.Component {
         this.state = {
             biodata: {},
             book: [],
+            saldo: [],
             token: '',
         }
     }
@@ -40,6 +41,7 @@ class Nsb extends React.Component {
                 this.setState({
                     biodata: respon.user,
                     book: respon.buku,
+                    saldo: respon.saldo[0],
                 })
                 console.log("ini dari biodata" + this.state.biodata)
                 console.log("untuk tampilkan gambar" + this.state.biodata.profile)
@@ -211,13 +213,13 @@ render() {
     return (
         <View style={styleNSB.container}>
             <Image source={require('./assets/logo.png')} style={styleNSB.img} />
-
             <View style={styleNSB.bcc}>
                 <Image source={{ uri: `http://peaceful-castle-64522.herokuapp.com${this.state.biodata.profile}` }} style={styleNSB.pp} />
                 <View style={styleNSB.boxText}>
                     <Text style={styleNSB.txt1}>{this.state.biodata.name}</Text>
                     <Text style={styleNSB.txt2}>{this.state.biodata.email}</Text>
                     <Text style={styleNSB.txt2}>{this.state.biodata.hp}</Text>
+                    <Text style={styleNSB.txt2}>Saldo : Rp. {this.state.saldo.saldo} </Text>
                 </View>
             </View>
             <View style={styleNSB.viewLine}>

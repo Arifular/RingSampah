@@ -5,7 +5,6 @@ import Splashscreen from "../splashcreen/splashscreen";
 import Login from "../Login/login";
 import Register from "../Register/register";
 import DashP1 from "../Dashboard/Dashboard_Pengurus1/dashP1";
-import DashP2 from "../Dashboard/Dashboard_Pengurus2/dashP2";
 import Menu from "../Menu/Menu";
 import Profile from "../Profile/Profile";
 import Nsb from "../Dashboard/dashboardNasabah/nasabahDash";
@@ -47,16 +46,22 @@ export default Navigation;
 class Bottom extends React.Component{
     render() {
         return(
-            <Tab.Navigator screenOptions={{tabBarActiveTintColor: '#4AB767'}}>
-                <Tab.Screen name="Home" component={Nsb} options={{
-                    headerShown: false, tabBarIcon: ({color, size}) => {
-                        <Ionicons color={color} size={size} />
-                    }
+            <Tab.Navigator screenOptions= {{
+                tabBarActiveTintColor: '#2c3e50',
+                tabBarActiveBackgroundColor: "#16a085"}} >
+                <Tab.Screen name="home" component={Nsb} options={{
+                    headerShown: false, 
+                    tabBarIcon: ({color, size}) => (
+                        <Ionicons name="home" color={color} size={size} />
+                    ),
+                    tabBarShowLabel: false
                 }} />
                 <Tab.Screen name="Menu" component={Menu} options={{
-                    headerShown: false, tabBarIcon: ({color, size}) => {
+                    headerShown: false, 
+                    tabBarIcon: ({color, size}) => (
                         <Ionicons name="grid" color={color} size={size} />
-                    }
+                    ),
+                    tabBarShowLabel: false
                 }} />
             </Tab.Navigator>
         )
