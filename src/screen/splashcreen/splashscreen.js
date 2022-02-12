@@ -39,7 +39,7 @@ export default class Splashscreen extends Component {
           if (this.state.tok == '' || this.state.tok == null) {
             this.props.navigation.replace('Login')
           } else {
-            this.props.navigation.replace('DashP1')
+            this.props.navigation.replace('BottomP1')
           }
         } else if (result == 'P2') {
           if (this.state.tok == '' || this.state.tok == null) {

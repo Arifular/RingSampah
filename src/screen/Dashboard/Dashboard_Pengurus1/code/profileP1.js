@@ -1,21 +1,21 @@
+import React, { Component } from 'react'
 import {
   Text,
   View,
   TouchableOpacity,
-  Image, TextInput,
+  Image,
+  TextInput,
   ScrollView,
   ToastAndroid,
 } from 'react-native';
-import React, { Component } from 'react';
-import { StyleProfile } from './styleProfile';
+import {ProfileP1Style} from "../style/proP1"
 
 // IMPORT LIBRARY
 import Ionicons from "react-native-vector-icons/Ionicons"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import ImageCropPicker from "react-native-image-crop-picker"
 
-
-export default class Profile extends Component {
+export class ProfileP1 extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +24,6 @@ export default class Profile extends Component {
       email: "",
       hp: "",
       address_address: "",
-      password: "",
       profile: null,
       token: "",
     }
@@ -59,25 +58,27 @@ export default class Profile extends Component {
           email: respon.data.email,
           hp: respon.data.hp,
           address_address: respon.data.address_address,
-          profile: respon.data.profile,
+          // profile: respon.data.profile,
         })
         console.log(this.state.name)
         console.log(this.state.email)
         console.log(this.state.hp)
         console.log(this.state.address_address)
-        console.log(this.state.profile);
+        // console.log(this.state.profile);
       })
       .catch((err) => console.log('==> Tampilkan Error data: ' + err))
       .finally(console.log('==> Selesai ambil data'))
   }
 
   editUser = () => {
-    fetch(`http://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}&password=${this.state.password}&profile=${this.state.profile}`, {
+
+    fetch(`http://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
         Accept: 'application/json',
       }
+
     })
       .then((response) => response.json())
       .then((respon) => {
@@ -89,68 +90,40 @@ export default class Profile extends Component {
           console.log('==> Edit Error')
         }
       })
-      .catch((err) => console.log('error ==> ' + err))
+      .catch((err) => {
+        console.log('error dari Edit ==> ' + err)
+      })
       .finally(console.log('Edit berhasil'))
   }
 
-  ndelok = () => {
-    this.setState({ counter: !this.state.counter })
-  }
-
-  selectFromGallery = () => {
-    ImageCropPicker.openPicker({
-      width: 300,
-      height: 400,
-      cropping: true,
-      cropperCircleOverlay: true,
-    })
-      .then(image => {
-        console.log(image)
-        this.setState({ profile: image.path })
-      }).catch((err) => console.log("error from Gallery" + err))
-  }
-
-  selectFromCamera = () => {
-    ImageCropPicker.openCamera({
-      width: 300,
-      height: 400,
-      cropping: true,
-      cropperCircleOverlay: true,
-    })
-      .then(image => {
-        console.log("data foto : " + JSON.stringify(image))
-        this.setState({ profile: image.path })
-      }).catch((err) => console.log("==> error from Camera : " + err))
-  }
-   
   render() {
     return (
-      <View style={StyleProfile.container}>
-        <View style={StyleProfile.container2}>
-          <TouchableOpacity onPress={() => this.props.navigation.replace('Bottom')}>
+      <View style={ProfileP1Style.container}>
+        <View style={ProfileP1Style.container2}>
+          <TouchableOpacity onPress={() => this.props.navigation.replace('BottomP1')}>
             <Ionicons name='arrow-back-outline' size={40} color='#000' />
           </TouchableOpacity>
-          <Text style={StyleProfile.textProfile}>Profile</Text>
-          <View style={{ padding: 20 }} />
+          <Text style={ProfileP1Style.textProfile}>Profile</Text>
+          <View />
         </View>
-        <View style={StyleProfile.boxPP}>
-          <Image source={require('./asset/pp.jpg')} style={StyleProfile.imagePP} />
-          <View style={StyleProfile.boxBtn}>
+        <View style={ProfileP1Style.boxPP}>
+
+          <View style={ProfileP1Style.boxBtn}>
             <TouchableOpacity onPress={() => this.selectFromCamera()} >
-              <Image source={require('./asset/camera.png')} />
+              <Image source={require('../../../Profile/asset/camera.png')} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => this.selectFromGallery()} style={{ marginTop: 20 }}>
-              <Image source={require('./asset/gallery(1).png')} />
+              <Image source={require('../../../Profile/asset/gallery(1).png')} />
             </TouchableOpacity>
           </View>
         </View>
         <ScrollView>
           <View>
-            <Text style={StyleProfile.textAtas}>Nama Lengkap</Text>
-            <View style={StyleProfile.boxEmail}>
+            <Text style={ProfileP1Style.textAtas}>Nama Lengkap</Text>
+            <View style={ProfileP1Style.boxEmail}>
               <TextInput
-                style={StyleProfile.inputEmail}
-                placeholder='Nama Lenkap'
+                style={ProfileP1Style.inputEmail}
+                placeholder='Nama Lengkap'
                 placeholderTextColor='#000'
                 onChangeText={name => { this.setState({ name }) }}
                 value={this.state.name}
@@ -158,10 +131,10 @@ export default class Profile extends Component {
             </View>
           </View>
           <View>
-            <Text style={StyleProfile.textAtas}>Email</Text>
-            <View style={StyleProfile.boxEmail}>
+            <Text style={ProfileP1Style.textAtas}>Email</Text>
+            <View style={ProfileP1Style.boxEmail}>
               <TextInput
-                style={StyleProfile.inputEmail}
+                style={ProfileP1Style.inputEmail}
                 placeholder='Email'
                 placeholderTextColor='#000'
                 onChangeText={email => { this.setState({ email }) }}
@@ -169,12 +142,11 @@ export default class Profile extends Component {
               />
             </View>
           </View>
-
           <View>
-            <Text style={StyleProfile.textAtas}>Nomor Telepon</Text>
-            <View style={StyleProfile.boxEmail}>
+            <Text style={ProfileP1Style.textAtas}>Nomor Telepon</Text>
+            <View style={ProfileP1Style.boxEmail}>
               <TextInput
-                style={StyleProfile.inputEmail}
+                style={ProfileP1Style.inputEmail}
                 placeholder='Nomor Telepon'
                 placeholderTextColor='#000'
                 onChangeText={hp => { this.setState({ hp }) }}
@@ -183,10 +155,10 @@ export default class Profile extends Component {
             </View>
           </View>
           <View>
-            <Text style={StyleProfile.textAtas}>Alamat</Text>
-            <View style={StyleProfile.boxEmail}>
+            <Text style={ProfileP1Style.textAtas}>Alamat</Text>
+            <View style={ProfileP1Style.boxEmail}>
               <TextInput
-                style={StyleProfile.inputEmail}
+                style={ProfileP1Style.inputEmail}
                 placeholder='Alamat'
                 placeholderTextColor='#000'
                 onChangeText={address_address => { this.setState({ address_address }) }}
@@ -194,27 +166,13 @@ export default class Profile extends Component {
               />
             </View>
           </View>
-          <View>
-            <Text style={StyleProfile.textAtas}>Kata Sandi</Text>
-            <View style={StyleProfile.boxPass}>
-              <TextInput
-                style={StyleProfile.inputPass}
-                placeholder='Kata Sandi'
-                placeholderTextColor='#000'
-                secureTextEntry={this.state.counter}
-                onChangeText={password => this.setState({ password })} />
-              <TouchableOpacity onPress={() => this.ndelok()}>
-                <Ionicons name={this.state.counter ? "eye-off-outline" : "eye-outline"} size={30} color={"#000"} />
-              </TouchableOpacity>
-            </View>
-          </View>
-          <TouchableOpacity style={StyleProfile.tombolMasuk} onPress={() => this.editUser()}>
-            <Text style={StyleProfile.textButton}>Simpan</Text>
+          <TouchableOpacity style={ProfileP1Style.tombolMasuk} onPress={() => this.editUser()}>
+            <Text style={ProfileP1Style.textButton}>Simpan</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>
-    );
+    )
   }
 }
 
-
+export default ProfileP1;

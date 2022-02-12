@@ -1,16 +1,19 @@
 import React from "react";
 import { View, Text, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { StyleSell } from "../style/sellStyle";
+
+//import Library
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import Ionicons from "react-native-vector-icons/Ionicons"
+
 
 class Sell extends React.Component {
     constructor(){
         super();
         this.state = {
             token: "",
-            id: "",
-            total: "",
-            refreshing: false,
+            category_id: "",
+            quantity: "",
         }
     }
 
@@ -25,21 +28,25 @@ class Sell extends React.Component {
     }
 
     dataJual = () => {
+        // const {category_id, quantity} = this.state;
+
+        const data = {
+            category_id: this.state.category_id,
+            quantity: this.state.quantity,
+        }
+
         fetch('http://peaceful-castle-64522.herokuapp.com/api/p2/sell', {
             method: 'POST',
+            body: JSON.stringify(data),
+            redirect: 'follow',
             headers: {
-                Authorization: `Bearer ${this.state.token}`
+                Authorization: `Bearer ${this.state.token}`,
+                'Content-Type' : 'application/json',
             }
         })
             .then((response) => response.json())
             .then((respone) => {
                 console.log("==> Respon data Jual" + respone)
-                this.setState({
-                    id: respone.category_id,
-                    total: respone.quantity,
-                })
-                console.log(this.state.id)
-                console.log(this.state.total)
             })
             .catch((err) => console.log("==> error data Jual : " + JSON.parse(err)))
             .finally(console.log("==> Sampah berhasil dijual"))
@@ -49,7 +56,10 @@ class Sell extends React.Component {
         return (
             <ScrollView>
                 <View style={StyleSell.container}>
-                    <Image source={require('../../dashboardNasabah/assets/logo.png')} style={StyleSell.img} />
+                    {/* <Image source={require('../../dashboardNasabah/assets/logo.png')} style={StyleSell.img} /> */}
+                    <TouchableOpacity onPress={() => this.props.navigation.replace("BottomP2")}>
+                        <Ionicons name="arrow-back-circle-outline" size={50} color={"#000"} />
+                    </TouchableOpacity>
                     <View style={StyleSell.boxIcon}>
                         <View style={StyleSell.boxBesi}>
                             <Image source={require('../assets/iron-bar.png')} style={StyleSell.icon} />
@@ -83,7 +93,7 @@ class Sell extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StyleSell.txtInput}
-                                onChangeText={id => this.setState({id})} />
+                                onChangeText={category_id => this.setState({category_id})} />
                         </View>
                         <Text style={StyleSell.txt}>Jumlah Sampah (Kg)</Text>
                         <View style={StyleSell.input}>
@@ -92,7 +102,7 @@ class Sell extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StyleSell.txtInput}
-                                onChangeText={total => this.setState({total})} />
+                                onChangeText={quantity => this.setState({quantity})} />
                         </View>
                     </View>
                     <TouchableOpacity style={StyleSell.btnJual} onPress={() => this.dataJual()}>

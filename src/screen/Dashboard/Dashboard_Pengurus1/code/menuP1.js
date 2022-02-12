@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 
-const MenuP2 = ({navigation}) => {
+const MenuP1 = ({navigation}) => {
 
     logOut = () => {
         console.log('==> Confirmation Prompt');
@@ -43,18 +43,18 @@ const MenuP2 = ({navigation}) => {
 
     return(
         <View style={Styles.container}>
-            <TouchableOpacity style={Styles.btn} onPress={() => navigation.navigate('ProfileP2')}>
-                <Image source={require('../assets/account.png')} style={Styles.img} />
+            <TouchableOpacity style={Styles.btn} onPress={() => navigation.navigate('ProfileP1')}>
+                <Image source={require('../../Dashboard_Pengurus2/assets/account.png')} style={Styles.img} />
                 <Text style={Styles.txt}>Profile</Text>
                 <View />
             </TouchableOpacity>
-            <TouchableOpacity style={Styles.btnJual} onPress={() => navigation.navigate("Sell")}>
-                <Image source={require('../assets/shop.png')} style={Styles.img}/>
-                <Text style={Styles.txt}>Jual</Text>
+            <TouchableOpacity style={Styles.btnJual} onPress={() => navigation.navigate("Buy")}>
+                <Image source={require('../../Dashboard_Pengurus2/assets/shop.png')} style={Styles.img}/>
+                <Text style={Styles.txt}>Beli</Text>
                 <View />
             </TouchableOpacity>
             <TouchableOpacity style={Styles.btnOut} onPress={() => logOut()}>
-                <Image source={require('../assets/turn-off.png')} style={Styles.img}/>
+                <Image source={require('../../Dashboard_Pengurus2/assets/turn-off.png')} style={Styles.img}/>
                 <Text style={Styles.txt}>Keluar</Text>
                 <View />
             </TouchableOpacity>
@@ -62,7 +62,7 @@ const MenuP2 = ({navigation}) => {
     )
 }
 
-export default MenuP2;
+export default MenuP1;
 
 const Styles = StyleSheet.create({
     container: {

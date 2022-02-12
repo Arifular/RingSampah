@@ -214,7 +214,7 @@ render() {
         <View style={styleNSB.container}>
             <Image source={require('./assets/logo.png')} style={styleNSB.img} />
             <View style={styleNSB.bcc}>
-                <Image source={{ uri: `http://peaceful-castle-64522.herokuapp.com${this.state.biodata.profile}` }} style={styleNSB.pp} />
+                <Image source={require('../../Profile/asset/pp.jpg')} style={styleNSB.pp} />
                 <View style={styleNSB.boxText}>
                     <Text style={styleNSB.txt1}>{this.state.biodata.name}</Text>
                     <Text style={styleNSB.txt2}>{this.state.biodata.email}</Text>
