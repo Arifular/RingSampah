@@ -58,7 +58,7 @@ class Login extends React.Component {
                     console.log('SUCCESS => ' + JSON.stringify(respon));
                     this.saveToken('token', respon.data.token)
                     this.saveToken('role', respon.data.role)
-                        .then(() => this.props.navigation.replace("DashP2"))
+                        .then(() => this.props.navigation.replace("BottomP2"))
                         .catch ((e) => console.log('==> Token status: ' + e))
                 } else {
                     ToastAndroid.show("ERROR LOGIN", ToastAndroid.SHORT)
