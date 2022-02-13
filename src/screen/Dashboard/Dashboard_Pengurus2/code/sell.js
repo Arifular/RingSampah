@@ -28,14 +28,13 @@ class Sell extends React.Component {
     }
 
     dataJual = () => {
-        // const {category_id, quantity} = this.state;
 
         const data = {
             category_id: this.state.category_id,
             quantity: this.state.quantity,
         }
 
-        fetch('http://peaceful-castle-64522.herokuapp.com/api/p2/sell', {
+        fetch('https://peaceful-castle-64522.herokuapp.com/api/p2/sell', {
             method: 'POST',
             body: JSON.stringify(data),
             redirect: 'follow',
@@ -56,7 +55,6 @@ class Sell extends React.Component {
         return (
             <ScrollView>
                 <View style={StyleSell.container}>
-                    {/* <Image source={require('../../dashboardNasabah/assets/logo.png')} style={StyleSell.img} /> */}
                     <TouchableOpacity onPress={() => this.props.navigation.replace("BottomP2")}>
                         <Ionicons name="arrow-back-circle-outline" size={50} color={"#000"} />
                     </TouchableOpacity>

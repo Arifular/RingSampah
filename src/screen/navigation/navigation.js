@@ -18,6 +18,7 @@ import MenuP1 from "../Dashboard/Dashboard_Pengurus1/code/menuP1";
 import Chat from "../Chat/chat";
 import Jemput from "../Jemput/jemput";
 import Book from "../book/book";
+import Harga from "../Harga/harga";
 
 
 //import Library
@@ -39,6 +40,7 @@ const Navigation = () => {
                 <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
                 <Stack.Screen name="Bottom" component={Bottom} options={{ headerShown: false }} />
                 <Stack.Screen name="Book" component={Book} options={{headerShown: false}} />
+                <Stack.Screen name="Harga" component={Harga} options={{headerShown: false}} />
                 <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
                 <Stack.Screen name="BottomP2" component={BottomP2} options={{ headerShown: false }} />
                 <Stack.Screen name="Sell" component={Sell} options={{ headerShown: false }} />
@@ -130,6 +132,20 @@ class BottomP1 extends React.Component {
                     headerShown: false,
                     tabBarIcon: ({ color, size }) => (
                         <Ionicons name="home" color={color} size={size} />
+                    ),
+                    tabBarShowLabel: false
+                }} />
+                <Tab.Screen name="Jemput" component={Jemput} options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="cube" color={color} size={size} />
+                    ),
+                    tabBarShowLabel: false
+                }} />
+                <Tab.Screen name="Chat" component={Chat} options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="chatbubble" color={color} size={size} />
                     ),
                     tabBarShowLabel: false
                 }} />

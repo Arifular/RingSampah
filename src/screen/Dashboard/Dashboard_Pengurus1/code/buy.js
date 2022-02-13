@@ -36,7 +36,7 @@ class Buy extends React.Component {
             email: this.state.email,
         }
 
-        fetch('http://peaceful-castle-64522.herokuapp.com/api/driver/buy', {
+        fetch('https://peaceful-castle-64522.herokuapp.com/api/driver/buy', {
             method: 'POST',
             body: JSON.stringify(data),
             redirect: 'follow',

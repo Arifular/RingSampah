@@ -1,6 +1,5 @@
 import { Text, View, TouchableOpacity, Alert, Image } from 'react-native';
 import React, { Component } from 'react';
-import { StyleMenu } from './StyleMenu'
 import { StyleSheet } from 'react-native';
 
 //IMPORT LIBRARY
@@ -45,37 +44,20 @@ export default class Menu extends Component {
 
   render() {
     return (
-
-      // <View style={StyleMenu.container}>
-      //   <Text style={StyleMenu.textMenu}>Menu</Text>
-      //   <View style={StyleMenu.containerBox}>
-      //     <Ionicons name='person-outline' size={40} color='#000' />
-      //     <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-      //       <Text style={StyleMenu.textBox}>Profile</Text>
-      //     </TouchableOpacity>
-      //     <View />
-      //   </View>
-      //   <View style={StyleMenu.containerBox}>
-      //     <Ionicons name='book-outline' size={40} color='#000' />
-      //     <TouchableOpacity>
-      //       <Text style={StyleMenu.textBox}>Panduan</Text>
-      //     </TouchableOpacity>
-      //     <View />
-      //   </View>
-      //   <TouchableOpacity style={StyleMenu.btn} onPress={() => this.logOut()}>
-      //     <Text style={StyleMenu.textBtn}>Keluar</Text>
-      //   </TouchableOpacity>
-      // </View>
-
       <View style={Styles.container}>
         <TouchableOpacity style={Styles.btn} onPress={() => this.props.navigation.navigate('Profile')}>
           <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/account.png')} style={Styles.img} />
           <Text style={Styles.txt}>Profile</Text>
           <View />
         </TouchableOpacity>
-        <TouchableOpacity style={Styles.btnJual} onPress={() => this.props.navigation.navigate("Book")}>
+        <TouchableOpacity style={Styles.btnPandu} onPress={() => this.props.navigation.navigate("Book")}>
           <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/book.png')} style={Styles.img} />
           <Text style={Styles.txt}>Buku Panduan</Text>
+          <View />
+        </TouchableOpacity>
+        <TouchableOpacity style={Styles.btnJual} onPress={() => this.props.navigation.navigate("Harga")}>
+          <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/rp.png')} style={Styles.img} />
+          <Text style={Styles.txt}>Harga Jual Sampah</Text>
           <View />
         </TouchableOpacity>
         <TouchableOpacity style={Styles.btnOut} onPress={() => this.logOut()}>
@@ -105,7 +87,7 @@ const Styles = StyleSheet.create({
       justifyContent: "space-between",
       paddingHorizontal: 30,
   },
-  btnJual: {
+  btnPandu: {
       paddingVertical: 20,
       backgroundColor: "#4AB767",
       borderRadius: 10,
@@ -115,6 +97,16 @@ const Styles = StyleSheet.create({
       justifyContent: "space-between",
       paddingHorizontal: 30,
   },
+  btnJual: {
+    paddingVertical: 20,
+    backgroundColor: "#6c5ce7",
+    borderRadius: 10,
+    marginBottom: 30,
+    flexDirection: "row",
+    justifyContent: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 30,
+},
   btnOut: {
       paddingVertical: 20,
       backgroundColor: "#ff4757",

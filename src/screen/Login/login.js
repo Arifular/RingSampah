@@ -26,7 +26,7 @@ class Login extends React.Component {
             password : this.state.password
         }
 
-        fetch('http://peaceful-castle-64522.herokuapp.com/api/login', {
+        fetch('https://peaceful-castle-64522.herokuapp.com/api/login', {
             method: "POST",
             headers: {
                 'Accept' : 'application/json',
@@ -99,9 +99,6 @@ class Login extends React.Component {
                         <Ionicons name={this.state.counter ? "eye-off-outline" : "eye-outline"} size={30} color={"#000"}/>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={{alignSelf:"flex-end", marginBottom: 210}}>
-                    <Text style={styleLogin.text2}>Lupa kata sandi?</Text>
-                </TouchableOpacity>
                 <TouchableOpacity style={styleLogin.btnMasuk} onPress={() => this.login()}>
                     <Text style={styleLogin.text3}>Masuk</Text>
                 </TouchableOpacity>

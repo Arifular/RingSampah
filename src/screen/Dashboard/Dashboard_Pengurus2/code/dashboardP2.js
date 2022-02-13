@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, ScrollView, FlatList } from "react-native"
+import { View, Text, Image, ScrollView } from "react-native"
 import { StyleDashP2 } from "../style/styleDash2";
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
@@ -31,7 +31,7 @@ class DashboardP2 extends React.Component {
     }
 
     Info = async () => {
-        await fetch('http://peaceful-castle-64522.herokuapp.com/api/p2/home', {
+        await fetch('https://peaceful-castle-64522.herokuapp.com/api/p2/home', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${this.state.token}`,
@@ -170,11 +170,8 @@ class DashboardP2 extends React.Component {
                             <Text style={{ fontSize: 18, color: '#fff' }}>Total</Text>
                         </View>
                     </View>
-                    {/* <FlatList
-                        data={this.state.log}
-                        renderItem={item}
-                        keyExtractor={(item, index) => index.toString()} /> */}
-                    <Item />
+                    {this.state.log === "belum ada penjualan" ? <Kosong /> : <Item />}
+                    {/* <Item /> */}
                 </View>
             </ScrollView>
         )
@@ -222,9 +219,20 @@ class DashboardP2 extends React.Component {
 
 export default DashboardP2;
 
-[
-    { "id": 1, "category": "Besi", "buyprice": 8000, "sellprice": 10000, "quantity": 4, "created_at": null, "updated_at": "2022-02-09T02:53:19.000000Z" }, 
-    { "id": 2, "category": "Plastik", "buyprice": 4000, "sellprice": 5000, "quantity": 0, "created_at": null, "updated_at": null }, 
-    { "id": 3, "category": "Kertas", "buyprice": 1500, "sellprice": 2500, "quantity": 10, "created_at": null, "updated_at": "2022-02-09T03:19:32.000000Z" }, 
-    { "id": 4, "category": "Kaca", "buyprice": 800, "sellprice": 1000, "quantity": 0, "created_at": null, "updated_at": null }
-]
+class Kosong extends React.Component{
+    render(){
+        return(
+            <View style={{
+                padding: 20,
+                backgroundColor: "#344356",
+              }}>
+                <Text style={{
+                  fontSize: 20,
+                  color: "#FFF",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}>Belum ada Penjualan</Text>
+              </View>
+        )
+    }
+}

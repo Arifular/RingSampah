@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity, ScrollView, ToastAndroid, Alert } from "react-native"
 import { StyleRegister } from "./styleRegister";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { styleLogin } from "../Login/styleLogin";
 
 class Register extends React.Component {
     constructor() {
@@ -37,7 +36,7 @@ class Register extends React.Component {
             address_address : this.state.address_address,
         }
 
-        fetch('http://peaceful-castle-64522.herokuapp.com/api/register', {
+        fetch('https://peaceful-castle-64522.herokuapp.com/api/register', {
             method: 'POST',
             headers: {
                 'Accept' : 'application/json',
