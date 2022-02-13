@@ -6,6 +6,7 @@ export const styleLogin = StyleSheet.create({
         backgroundColor: "#FFF",
         flex: 1,
         paddingVertical: 25,
+        flexDirection: "column",
     },
     logo: {
         width: 100,
@@ -56,6 +57,7 @@ export const styleLogin = StyleSheet.create({
         paddingVertical: 20,
         borderRadius: 10,
         backgroundColor: "#4AB767",
+        marginTop: "70%"
     },
     text3: {
         fontSize: 20,

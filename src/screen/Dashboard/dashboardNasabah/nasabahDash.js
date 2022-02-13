@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, FlatList, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { styleNSB } from './nsbStyle';
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
@@ -28,7 +28,7 @@ class Nsb extends React.Component {
     }
 
     Info = async () => {
-        await fetch('http://peaceful-castle-64522.herokuapp.com/api/nasabah/home', {
+        await fetch('https://peaceful-castle-64522.herokuapp.com/api/nasabah/home', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${this.state.token}`,
@@ -62,13 +62,13 @@ render() {
                     <ScrollView >
                         {this.state.book.map((value, index) => (
                             <View style={{ flexDirection: 'row', }}>
-                                <View style={{
+                                {/* <View style={{
                                     width: 57.5,
                                     alignItems: 'center',
                                     borderWidth: 1,
                                 }}>
                                     <Text style={{ fontSize: 18, color: '#000' }}>{value.id}</Text>
-                                </View>
+                                </View> */}
                                 <View style={{
                                     width: 104,
                                     alignItems: 'center',
@@ -136,14 +136,14 @@ render() {
                     marginTop: 15,
                 }}>
                     <View style={{ flexDirection: 'row' }}>
-                        <View style={{
+                        {/* <View style={{
                             paddingHorizontal: 15,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>NO</Text>
-                        </View>
+                        </View> */}
                         <View style={{
                             paddingHorizontal: 32.5,
                             paddingVertical: 5,
@@ -201,10 +201,6 @@ render() {
                             <Text style={{ fontSize: 18, color: '#fff' }}>Saldo</Text>
                         </View>
                     </View>
-                    {/* <FlatList
-                        data={this.state.book}
-                        renderItem={item}
-                        keyExtractor={(item, index) => index.toString()} /> */}
                     <Item />
                 </View>
             </ScrollView>
@@ -225,10 +221,29 @@ render() {
             <View style={styleNSB.viewLine}>
                 <Text style={styleNSB.txt3}>Buku Tabungan</Text>
             </View>
-            <Table />
+            {this.state.book === "belum ada catatan dalam buku tabungan" ? <Kosong /> : <Table/>}
+            {/* <Table /> */}
         </View>
     )
 }
 }
 
 export default Nsb;
+
+class Kosong extends React.Component{
+    render(){
+        return(
+            <View style={{
+                padding: 20,
+                backgroundColor: "#344356",
+              }}>
+                <Text style={{
+                  fontSize: 20,
+                  color: "#FFF",
+                  fontWeight: "bold",
+                  textAlign: "center",
+                }}>Belum ada Transaksi</Text>
+              </View>
+        )
+    }
+}

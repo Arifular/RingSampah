@@ -24,7 +24,8 @@ export class ProfileP2 extends Component {
       email: "",
       hp: "",
       address_address: "",
-      profile: null,
+      password: "",
+      // profile: null,
       token: "",
     }
   }
@@ -43,7 +44,7 @@ export class ProfileP2 extends Component {
   }
 
   dataUser = () => {
-    fetch('http://peaceful-castle-64522.herokuapp.com/api/profile', {
+    fetch('https://peaceful-castle-64522.herokuapp.com/api/profile', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
@@ -72,7 +73,7 @@ export class ProfileP2 extends Component {
 
   editUser = () => {
 
-    fetch(`http://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}`, {
+    fetch(`https://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}&password=${this.state.password}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
@@ -96,6 +97,10 @@ export class ProfileP2 extends Component {
       .finally(console.log('Edit berhasil'))
   }
 
+  ndelok = () => {
+    this.setState({ counter: !this.state.counter })
+  }
+
   render() {
     return (
       <View style={ProfileP2Style.container}>
@@ -107,7 +112,7 @@ export class ProfileP2 extends Component {
           <View />
         </View>
         <View style={ProfileP2Style.boxPP}>
-
+          <Image source={require('../assets/man.png')} style={ProfileP2Style.imagePP} />
           <View style={ProfileP2Style.boxBtn}>
             <TouchableOpacity onPress={() => this.selectFromCamera()} >
               <Image source={require('../../../Profile/asset/camera.png')} />
@@ -164,6 +169,20 @@ export class ProfileP2 extends Component {
                 onChangeText={address_address => { this.setState({ address_address }) }}
                 value={this.state.address_address}
               />
+            </View>
+          </View>
+          <View>
+            <Text style={ProfileP2Style.textAtas}>Kata Sandi</Text>
+            <View style={ProfileP2Style.boxPass}>
+              <TextInput
+                style={ProfileP2Style.inputPass}
+                placeholder='Kata Sandi'
+                placeholderTextColor='#000'
+                secureTextEntry={this.state.counter}
+                onChangeText={password => this.setState({ password })} />
+              <TouchableOpacity onPress={() => this.ndelok()}>
+                <Ionicons name={this.state.counter ? "eye-off-outline" : "eye-outline"} size={30} color={"#000"} />
+              </TouchableOpacity>
             </View>
           </View>
           <TouchableOpacity style={ProfileP2Style.tombolMasuk} onPress={() => this.editUser()}>

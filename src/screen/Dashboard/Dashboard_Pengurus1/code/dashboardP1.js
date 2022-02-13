@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, ScrollView, FlatList } from "react-native"
+import { View, Text, Image, ScrollView } from "react-native"
 import { StyleDashP1 } from "../style/dashP1Style";
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
@@ -26,7 +26,7 @@ class DashboardP1 extends React.Component{
     }
 
     DataUser= async () => {
-        await fetch('http://peaceful-castle-64522.herokuapp.com/api/driver/home', {
+        await fetch('https://peaceful-castle-64522.herokuapp.com/api/driver/home', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${this.state.token}`,

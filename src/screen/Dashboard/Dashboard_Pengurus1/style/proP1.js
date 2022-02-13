@@ -79,6 +79,26 @@ export const ProfileP1Style = StyleSheet.create({
         alignSelf: 'center',
         color: '#FFF',
         fontWeight: 'bold'
-    }
+    },
+    boxPass: {
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: "#000",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 24,
+    },
+    inputPass : {
+        color: "#000",
+        fontSize: 16,
+        width: "90%"
+    },
+    textAtas: {
+        color: "#000",
+        fontSize: 16,
+    },
 
 })

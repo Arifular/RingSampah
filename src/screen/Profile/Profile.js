@@ -25,7 +25,7 @@ export default class Profile extends Component {
       hp: "",
       address_address: "",
       password: "",
-      profile: null,
+      // profile: null,
       token: "",
     }
   }
@@ -44,7 +44,7 @@ export default class Profile extends Component {
   }
 
   dataUser = () => {
-    fetch('http://peaceful-castle-64522.herokuapp.com/api/profile', {
+    fetch('https://peaceful-castle-64522.herokuapp.com/api/profile', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
@@ -59,20 +59,20 @@ export default class Profile extends Component {
           email: respon.data.email,
           hp: respon.data.hp,
           address_address: respon.data.address_address,
-          profile: respon.data.profile,
+          // profile: respon.data.profile,
         })
         console.log(this.state.name)
         console.log(this.state.email)
         console.log(this.state.hp)
         console.log(this.state.address_address)
-        console.log(this.state.profile);
+        // console.log(this.state.profile);
       })
       .catch((err) => console.log('==> Tampilkan Error data: ' + err))
       .finally(console.log('==> Selesai ambil data'))
   }
 
   editUser = () => {
-    fetch(`http://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}&password=${this.state.password}&profile=${this.state.profile}`, {
+    fetch(`https://peaceful-castle-64522.herokuapp.com/api/profile/update?name=${this.state.name}&email=${this.state.email}&hp=${this.state.hp}&address_address=${this.state.address_address}&password=${this.state.password}`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${this.state.token}`,
