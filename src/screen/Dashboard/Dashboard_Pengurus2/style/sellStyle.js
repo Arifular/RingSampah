@@ -64,8 +64,8 @@ export const StyleSell = StyleSheet.create({
         marginTop: 15,
     },
     icon: {
-        height: 100,
-        width: 100,
+        height: 80,
+        width: 80,
     },
     boxCategori: {
         // width: 310,

@@ -8,7 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons"
 
 
 class Buy extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             token: "",
@@ -21,7 +21,7 @@ class Buy extends React.Component {
     componentDidMount() {
         AsyncStorage.getItem('token')
             .then(value => {
-                this.setState({token: value})
+                this.setState({ token: value })
             })
             .then(() => this.dataBeli())
             .catch((err) => console.log("AsyncStorage ERROR" + err))
@@ -42,7 +42,7 @@ class Buy extends React.Component {
             redirect: 'follow',
             headers: {
                 Authorization: `Bearer ${this.state.token}`,
-                'Content-Type' : 'application/json',
+                'Content-Type': 'application/json',
             }
         })
             .then((response) => response.json())
@@ -61,17 +61,21 @@ class Buy extends React.Component {
                         <Ionicons name="arrow-back-circle-outline" size={50} color={"#000"} />
                     </TouchableOpacity>
                     <View style={StylesBuy.boxIcon}>
-                        <View style={StylesBuy.boxBesi}>
-                            <Image source={require('../../Dashboard_Pengurus2/assets/iron-bar.png')} style={StylesBuy.icon} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View style={StylesBuy.boxBesi}>
+                                <Image source={require('../../Dashboard_Pengurus2/assets/iron-bar.png')} style={StylesBuy.icon} />
+                            </View>
+                            <View style={StylesBuy.boxKertas}>
+                                <Image source={require('../../Dashboard_Pengurus2/assets/paperboard.png')} style={StylesBuy.icon} />
+                            </View>
                         </View>
-                        <View style={StylesBuy.boxKertas}>
-                            <Image source={require('../../Dashboard_Pengurus2/assets/paperboard.png')} style={StylesBuy.icon} />
-                        </View>
-                        <View style={StylesBuy.boxKaca}>
-                            <Image source={require('../../Dashboard_Pengurus2/assets/glasses.png')} style={StylesBuy.icon} />
-                        </View>
-                        <View style={StylesBuy.boxPlastic}>
-                            <Image source={require('../../Dashboard_Pengurus2/assets/plastic.png')} style={StylesBuy.icon} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View style={StylesBuy.boxKaca}>
+                                <Image source={require('../../Dashboard_Pengurus2/assets/glasses.png')} style={StylesBuy.icon} />
+                            </View>
+                            <View style={StylesBuy.boxPlastic}>
+                                <Image source={require('../../Dashboard_Pengurus2/assets/plastic.png')} style={StylesBuy.icon} />
+                            </View>
                         </View>
                     </View>
                     <View style={StylesBuy.boxCategori}>
@@ -93,7 +97,7 @@ class Buy extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StylesBuy.txtInput}
-                                onChangeText={category_id => this.setState({category_id})} />
+                                onChangeText={category_id => this.setState({ category_id })} />
                         </View>
                         <Text style={StylesBuy.txt}>Jumlah Sampah (Kg)</Text>
                         <View style={StylesBuy.input}>
@@ -102,7 +106,7 @@ class Buy extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StylesBuy.txtInput}
-                                onChangeText={quantity => this.setState({quantity})} />
+                                onChangeText={quantity => this.setState({ quantity })} />
                         </View>
                         <Text style={StylesBuy.txt}>Input Email Nasabah</Text>
                         <View style={StylesBuy.input}>
@@ -111,7 +115,7 @@ class Buy extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StylesBuy.txtInput}
-                                onChangeText={email => this.setState({email})} />
+                                onChangeText={email => this.setState({ email })} />
                         </View>
                     </View>
                     <TouchableOpacity style={StylesBuy.btnJual} onPress={() => this.dataBeli()}>

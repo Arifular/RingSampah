@@ -5,7 +5,7 @@ export const StyleDashP2 = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFF',
         paddingHorizontal: 25,
-        paddingTop: 25,
+        paddingVertical: 10,
     },
     img: {
         alignSelf: 'center',
@@ -26,7 +26,6 @@ export const StyleDashP2 = StyleSheet.create({
         borderWidth: 1,
         alignItems: "center",
         borderColor: "#000",
-
     },
     boxText: {
         marginLeft: 20,
@@ -49,16 +48,11 @@ export const StyleDashP2 = StyleSheet.create({
         marginTop: 10
     },
     boxIcon: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent:'space-between',
+        flexDirection: 'column',
         marginTop: 10,
-        
     },
     boxBesi: {
-        // width: 150,
-        // height: 200,
-        paddingHorizontal: 40,
+        paddingHorizontal: 30,
         paddingVertical: 30,
         backgroundColor: "#2C3E50",
         flexDirection: "column",
@@ -67,10 +61,8 @@ export const StyleDashP2 = StyleSheet.create({
         borderRadius: 20,
     },
     boxKertas: {
-        // width: 150,
-        // height: 200,
-        paddingHorizontal: 40,
-        paddingVertical: 0,
+        paddingHorizontal: 30,
+        paddingVertical: 30,
         backgroundColor: "#F1C40F",
         flexDirection: "column",
         justifyContent: 'center',
@@ -78,9 +70,7 @@ export const StyleDashP2 = StyleSheet.create({
         borderRadius: 20,
     },
     boxKaca: {
-        // width: 150,
-        // height: 200,
-        paddingHorizontal: 40,
+        paddingHorizontal: 30,
         paddingVertical: 30,
         backgroundColor: "#FD79A8",
         flexDirection: "column",
@@ -90,10 +80,8 @@ export const StyleDashP2 = StyleSheet.create({
         marginTop: 15,
     },
     boxPlastic: {
-        // width: 150,
-        // height: 200,
-        paddingHorizontal: 40,
-        paddingVertical: 0,
+        paddingHorizontal: 30,
+        paddingVertical: 30,
         backgroundColor: "#16A085",
         flexDirection: "column",
         justifyContent: 'center',
@@ -102,8 +90,8 @@ export const StyleDashP2 = StyleSheet.create({
         marginTop: 15,
     },
     icon: {
-        height: 100,
-        width: 100,
+        height: 80,
+        width: 80,
     },
     text3: {
         fontSize: 18,

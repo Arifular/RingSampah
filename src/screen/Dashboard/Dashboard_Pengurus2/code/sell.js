@@ -8,7 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons"
 
 
 class Sell extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             token: "",
@@ -20,7 +20,7 @@ class Sell extends React.Component {
     componentDidMount() {
         AsyncStorage.getItem('token')
             .then(value => {
-                this.setState({token: value})
+                this.setState({ token: value })
             })
             .then(() => this.dataJual())
             .catch((err) => console.log("AsyncStorage ERROR" + err))
@@ -40,7 +40,7 @@ class Sell extends React.Component {
             redirect: 'follow',
             headers: {
                 Authorization: `Bearer ${this.state.token}`,
-                'Content-Type' : 'application/json',
+                'Content-Type': 'application/json',
             }
         })
             .then((response) => response.json())
@@ -59,17 +59,25 @@ class Sell extends React.Component {
                         <Ionicons name="arrow-back-circle-outline" size={50} color={"#000"} />
                     </TouchableOpacity>
                     <View style={StyleSell.boxIcon}>
-                        <View style={StyleSell.boxBesi}>
-                            <Image source={require('../assets/iron-bar.png')} style={StyleSell.icon} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View style={StyleSell.boxBesi}>
+                                <Image source={require('../assets/iron-bar.png')} style={StyleSell.icon} />
+                            </View>
                         </View>
-                        <View style={StyleSell.boxKertas}>
-                            <Image source={require('../assets/paperboard.png')} style={StyleSell.icon} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View style={StyleSell.boxKertas}>
+                                <Image source={require('../assets/paperboard.png')} style={StyleSell.icon} />
+                            </View>
                         </View>
-                        <View style={StyleSell.boxKaca}>
-                            <Image source={require('../assets/glasses.png')} style={StyleSell.icon} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View style={StyleSell.boxKaca}>
+                                <Image source={require('../assets/glasses.png')} style={StyleSell.icon} />
+                            </View>
                         </View>
-                        <View style={StyleSell.boxPlastic}>
-                            <Image source={require('../assets/plastic.png')} style={StyleSell.icon} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                            <View style={StyleSell.boxPlastic}>
+                                <Image source={require('../assets/plastic.png')} style={StyleSell.icon} />
+                            </View>
                         </View>
                     </View>
                     <View style={StyleSell.boxCategori}>
@@ -91,7 +99,7 @@ class Sell extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StyleSell.txtInput}
-                                onChangeText={category_id => this.setState({category_id})} />
+                                onChangeText={category_id => this.setState({ category_id })} />
                         </View>
                         <Text style={StyleSell.txt}>Jumlah Sampah (Kg)</Text>
                         <View style={StyleSell.input}>
@@ -100,7 +108,7 @@ class Sell extends React.Component {
                                 placeholderTextColor="#FFF"
                                 textAlign="center"
                                 style={StyleSell.txtInput}
-                                onChangeText={quantity => this.setState({quantity})} />
+                                onChangeText={quantity => this.setState({ quantity })} />
                         </View>
                     </View>
                     <TouchableOpacity style={StyleSell.btnJual} onPress={() => this.dataJual()}>
