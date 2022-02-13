@@ -91,28 +91,28 @@ render() {
                                     <Text style={{ fontSize: 18, color: '#000' }}>{value.berat}</Text>
                                 </View>
                                 <View style={{
-                                    width: 136,
+                                    width: 120,
                                     alignItems: 'center',
                                     borderWidth: 1,
                                 }}>
                                     <Text style={{ fontSize: 18, color: '#000' }}>{value.jenis_sampah}</Text>
                                 </View>
                                 <View style={{
-                                    width: 136,
+                                    width: 135,
                                     alignItems: 'flex-start',
                                     borderWidth: 1,
                                 }}>
                                     <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.debit}</Text>
                                 </View>
                                 <View style={{
-                                    width: 136,
+                                    width: 135,
                                     alignItems: 'flex-start',
                                     borderWidth: 1,
                                 }}>
                                     <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.kredit}</Text>
                                 </View>
                                 <View style={{
-                                    width: 136,
+                                    width: 135,
                                     alignItems: 'flex-start',
                                     borderWidth: 1,
                                 }}>
@@ -136,67 +136,68 @@ render() {
                     marginTop: 15,
                 }}>
                     <View style={{ flexDirection: 'row' }}>
-                        {/* <View style={{
-                            paddingHorizontal: 15,
-                            paddingVertical: 5,
-                            backgroundColor: '#40407A',
-                            borderWidth: 1
-                        }}>
-                            <Text style={{ fontSize: 18, color: '#fff' }}>NO</Text>
-                        </View> */}
                         <View style={{
-                            paddingHorizontal: 32.5,
+                            width: 104,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Date</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 10.5,
+                            // paddingHorizontal: 10.5,
+                            width: 113.5,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Keterangan</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 10,
+                            // paddingHorizontal: 10,
+                            width: 101,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Berat (Kg)</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 10,
+                            width: 120,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Jenis Sampah</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 46,
+                            width: 135,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Debit</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 43.5,
+                            width: 135,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Kredit</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 44,
+                            width: 135,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Saldo</Text>
                         </View>

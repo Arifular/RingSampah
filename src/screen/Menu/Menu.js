@@ -85,7 +85,7 @@ const Styles = StyleSheet.create({
       borderRadius: 10,
       flexDirection: "row",
       justifyContent: "space-between",
-      paddingHorizontal: 30,
+      paddingHorizontal: 15,
   },
   btnPandu: {
       paddingVertical: 20,
@@ -95,7 +95,7 @@ const Styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: "center",
       justifyContent: "space-between",
-      paddingHorizontal: 30,
+      paddingHorizontal: 15,
   },
   btnJual: {
     paddingVertical: 20,
@@ -105,7 +105,7 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 30,
+    paddingHorizontal: 15,
 },
   btnOut: {
       paddingVertical: 20,
@@ -114,7 +114,7 @@ const Styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: "center",
       justifyContent: "space-between",
-      paddingHorizontal: 30,
+      paddingHorizontal: 15,
   },
   txt: {
       fontSize: 30,

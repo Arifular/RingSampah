@@ -67,42 +67,42 @@ class DashboardP2 extends React.Component {
                     {this.state.log.map((value, index) => (
                         <View style={{ flexDirection: 'row', }}>
                             <View style={{
-                                width: 57.5,
+                                width: 35,
                                 alignItems: 'center',
                                 borderWidth: 1,
                             }}>
                                 <Text style={{ fontSize: 18, color: '#000' }}>{value.id}</Text>
                             </View>
                             <View style={{
-                                width: 104,
+                                width: 105,
                                 alignItems: 'center',
                                 borderWidth: 1,
                             }}>
                                 <Text style={{ fontSize: 18, color: '#000' }}>{value.updated_at}</Text>
                             </View>
                             <View style={{
-                                width: 136,
+                                width: 120,
                                 borderWidth: 1,
                                 alignItems: 'center'
                             }}>
                                 <Text style={{ fontSize: 18, color: '#000', }}>{value.category}</Text>
                             </View>
                             <View style={{
-                                width: 100,
+                                width: 90,
                                 alignItems: 'center',
                                 borderWidth: 1,
                             }}>
                                 <Text style={{ fontSize: 18, color: '#000' }}>{value.quantity}</Text>
                             </View>
                             <View style={{
-                                width: 109,
+                                width: 110,
                                 alignItems: 'flex-start',
                                 borderWidth: 1,
                             }}>
                                 <Text style={{ fontSize: 18, color: '#000' }}>Rp. {value.sell_price}</Text>
                             </View>
                             <View style={{
-                                width: 136,
+                                width: 110,
                                 alignItems: 'flex-start',
                                 borderWidth: 1,
                             }}>
@@ -122,50 +122,56 @@ class DashboardP2 extends React.Component {
                 }}>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{
-                            paddingHorizontal: 15,
+                            width: 35,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
-                            borderWidth: 1
+                            borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>NO</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 33,
+                            width: 105,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center"
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Date</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 10,
+                            width: 120,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center"
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Jenis Sampah</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 11.5,
+                            width: 90,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Berat(Kg)</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 10,
+                            width: 110,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center"
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Harga Jual</Text>
                         </View>
                         <View style={{
-                            paddingHorizontal: 47,
+                            width: 110,
                             paddingVertical: 5,
                             backgroundColor: '#40407A',
                             borderWidth: 1,
+                            alignItems: "center",
                         }}>
                             <Text style={{ fontSize: 18, color: '#fff' }}>Total</Text>
                         </View>
@@ -192,21 +198,25 @@ class DashboardP2 extends React.Component {
                 <View style={StyleDashP2.viewLine} />
                 <ScrollView>
                     <View style={StyleDashP2.boxIcon}>
-                        <View style={StyleDashP2.boxBesi}>
-                            <Image source={require('../assets/iron-bar.png')} style={StyleDashP2.icon} />
-                            <Text style={StyleDashP2.txt1}>Stock : {this.state.total.quantity}</Text>
+                        <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+                            <View style={StyleDashP2.boxBesi}>
+                                <Image source={require('../assets/iron-bar.png')} style={StyleDashP2.icon} />
+                                <Text style={StyleDashP2.txt1}>Stock : {this.state.total.quantity}</Text>
+                            </View>
+                            <View style={StyleDashP2.boxKertas}>
+                                <Image source={require('../assets/paperboard.png')} style={StyleDashP2.icon} />
+                                <Text style={StyleDashP2.txt1}>Stock : {this.state.total3.quantity}</Text>
+                            </View>
                         </View>
-                        <View style={StyleDashP2.boxKertas}>
-                            <Image source={require('../assets/paperboard.png')} style={StyleDashP2.icon} />
-                            <Text style={StyleDashP2.txt1}>Stock : {this.state.total3.quantity}</Text>
-                        </View>
-                        <View style={StyleDashP2.boxKaca}>
-                            <Image source={require('../assets/glasses.png')} style={StyleDashP2.icon} />
-                            <Text style={StyleDashP2.txt1}>Stock : {this.state.total4.quantity}</Text>
-                        </View>
-                        <View style={StyleDashP2.boxPlastic}>
-                            <Image source={require('../assets/plastic.png')} style={StyleDashP2.icon} />
-                            <Text style={StyleDashP2.txt1}>Stock : {this.state.total2.quantity}</Text>
+                        <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+                            <View style={StyleDashP2.boxKaca}>
+                                <Image source={require('../assets/glasses.png')} style={StyleDashP2.icon} />
+                                <Text style={StyleDashP2.txt1}>Stock : {this.state.total4.quantity}</Text>
+                            </View>
+                            <View style={StyleDashP2.boxPlastic}>
+                                <Image source={require('../assets/plastic.png')} style={StyleDashP2.icon} />
+                                <Text style={StyleDashP2.txt1}>Stock : {this.state.total2.quantity}</Text>
+                            </View>
                         </View>
                     </View>
                     <Text style={StyleDashP2.text3}>Histori Penjualan</Text>
@@ -219,20 +229,20 @@ class DashboardP2 extends React.Component {
 
 export default DashboardP2;
 
-class Kosong extends React.Component{
-    render(){
-        return(
+class Kosong extends React.Component {
+    render() {
+        return (
             <View style={{
                 padding: 20,
                 backgroundColor: "#344356",
-              }}>
+            }}>
                 <Text style={{
-                  fontSize: 20,
-                  color: "#FFF",
-                  fontWeight: "bold",
-                  textAlign: "center",
+                    fontSize: 20,
+                    color: "#FFF",
+                    fontWeight: "bold",
+                    textAlign: "center",
                 }}>Belum ada Penjualan</Text>
-              </View>
+            </View>
         )
     }
 }

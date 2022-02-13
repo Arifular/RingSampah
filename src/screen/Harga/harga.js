@@ -15,21 +15,25 @@ class Harga extends React.Component {
                     <View />
                 </View>
                 <View style={Styles.boxIcon}>
-                    <View style={Styles.boxBesi}>
-                        <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/iron-bar.png')} style={Styles.icon} />
-                        <Text style={Styles.txt1}>Rp.8000/Kg</Text>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                        <View style={Styles.boxBesi}>
+                            <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/iron-bar.png')} style={Styles.icon} />
+                            <Text style={Styles.txt1}>Rp.8000/Kg</Text>
+                        </View>
+                        <View style={Styles.boxKertas}>
+                            <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/paperboard.png')} style={Styles.icon} />
+                            <Text style={Styles.txt1}>Rp.1500/Kg</Text>
+                        </View>
                     </View>
-                    <View style={Styles.boxKertas}>
-                        <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/paperboard.png')} style={Styles.icon} />
-                        <Text style={Styles.txt1}>Rp.1500/Kg</Text>
-                    </View>
-                    <View style={Styles.boxKaca}>
-                        <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/glasses.png')} style={Styles.icon} />
-                        <Text style={Styles.txt1}>Rp.800/Kg</Text>
-                    </View>
-                    <View style={Styles.boxPlastic}>
-                        <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/plastic.png')} style={Styles.icon} />
-                        <Text style={Styles.txt1}>Rp.4000/Kg</Text>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                        <View style={Styles.boxKaca}>
+                            <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/glasses.png')} style={Styles.icon} />
+                            <Text style={Styles.txt1}>Rp.800/Kg</Text>
+                        </View>
+                        <View style={Styles.boxPlastic}>
+                            <Image source={require('../Dashboard/Dashboard_Pengurus2/assets/plastic.png')} style={Styles.icon} />
+                            <Text style={Styles.txt1}>Rp.4000/Kg</Text>
+                        </View>
                     </View>
                 </View>
                 <View style={Styles.box} />
@@ -60,13 +64,10 @@ const Styles = StyleSheet.create({
         textAlign: "center",
     },
     boxIcon: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexDirection: 'column',
         justifyContent: 'space-between',
     },
     boxBesi: {
-        // width: 150,
-        // height: 200,
         paddingHorizontal: 30,
         paddingVertical: 30,
         backgroundColor: "#2C3E50",
@@ -76,8 +77,6 @@ const Styles = StyleSheet.create({
         borderRadius: 20,
     },
     boxKertas: {
-        // width: 150,
-        // height: 200,
         paddingHorizontal: 30,
         paddingVertical: 30,
         backgroundColor: "#F1C40F",
@@ -87,8 +86,6 @@ const Styles = StyleSheet.create({
         borderRadius: 20,
     },
     boxKaca: {
-        // width: 150,
-        // height: 200,
         paddingHorizontal: 30,
         paddingVertical: 30,
         backgroundColor: "#FD79A8",
@@ -99,8 +96,6 @@ const Styles = StyleSheet.create({
         marginTop: 15,
     },
     boxPlastic: {
-        // width: 150,
-        // height: 200,
         paddingHorizontal: 30,
         paddingVertical: 30,
         backgroundColor: "#16A085",
@@ -111,8 +106,8 @@ const Styles = StyleSheet.create({
         marginTop: 15,
     },
     icon: {
-        height: 130,
-        width: 130,
+        height: 100,
+        width: 100,
     },
     txt1: {
         fontSize: 20,
