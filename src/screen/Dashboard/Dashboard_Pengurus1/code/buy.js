@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, ScrollView, ToastAndroid } from "react-native";
 import { StylesBuy } from "../style/buyStyle";
 
 //import Library
@@ -48,6 +48,11 @@ class Buy extends React.Component {
             .then((response) => response.json())
             .then((respone) => {
                 console.log("==> Respon data Jual" + respone)
+                if(respone.status == 'success, sampah berhasil dibeli') {
+                    ToastAndroid.show('Sampah berhasil di Beli', ToastAndroid.SHORT, ToastAndroid.CENTER)
+                } else {
+                    console.log("==> Beli Sampah Error")
+                }
             })
             .catch((err) => console.log("==> error data Beli : " + JSON.parse(err)))
             .finally(console.log("==> Sampah berhasil di Beli"))
@@ -60,24 +65,6 @@ class Buy extends React.Component {
                     <TouchableOpacity onPress={() => this.props.navigation.replace("BottomP1")}>
                         <Ionicons name="arrow-back-circle-outline" size={50} color={"#000"} />
                     </TouchableOpacity>
-                    <View style={StylesBuy.boxIcon}>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={StylesBuy.boxBesi}>
-                                <Image source={require('../../Dashboard_Pengurus2/assets/iron-bar.png')} style={StylesBuy.icon} />
-                            </View>
-                            <View style={StylesBuy.boxKertas}>
-                                <Image source={require('../../Dashboard_Pengurus2/assets/paperboard.png')} style={StylesBuy.icon} />
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={StylesBuy.boxKaca}>
-                                <Image source={require('../../Dashboard_Pengurus2/assets/glasses.png')} style={StylesBuy.icon} />
-                            </View>
-                            <View style={StylesBuy.boxPlastic}>
-                                <Image source={require('../../Dashboard_Pengurus2/assets/plastic.png')} style={StylesBuy.icon} />
-                            </View>
-                        </View>
-                    </View>
                     <View style={StylesBuy.boxCategori}>
                         <Text style={StylesBuy.txt}>Note Categori ID :</Text>
                         <View style={StylesBuy.boxtxt}>

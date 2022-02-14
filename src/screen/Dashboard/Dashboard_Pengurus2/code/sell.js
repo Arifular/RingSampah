@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, ScrollView,ToastAndroid } from "react-native";
 import { StyleSell } from "../style/sellStyle";
 
 //import Library
@@ -46,6 +46,12 @@ class Sell extends React.Component {
             .then((response) => response.json())
             .then((respone) => {
                 console.log("==> Respon data Jual" + respone)
+                if (respone.status == 'success, sampah berhasil dijual') {
+                    ToastAndroid.show('Berhasil di Jual', ToastAndroid.SHORT, ToastAndroid.CENTER)
+                    this.dataUser()
+                  } else {
+                    console.log('==> Edit Error')
+                  }
             })
             .catch((err) => console.log("==> error data Jual : " + JSON.parse(err)))
             .finally(console.log("==> Sampah berhasil dijual"))
@@ -58,28 +64,6 @@ class Sell extends React.Component {
                     <TouchableOpacity onPress={() => this.props.navigation.replace("BottomP2")}>
                         <Ionicons name="arrow-back-circle-outline" size={50} color={"#000"} />
                     </TouchableOpacity>
-                    <View style={StyleSell.boxIcon}>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={StyleSell.boxBesi}>
-                                <Image source={require('../assets/iron-bar.png')} style={StyleSell.icon} />
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={StyleSell.boxKertas}>
-                                <Image source={require('../assets/paperboard.png')} style={StyleSell.icon} />
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={StyleSell.boxKaca}>
-                                <Image source={require('../assets/glasses.png')} style={StyleSell.icon} />
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <View style={StyleSell.boxPlastic}>
-                                <Image source={require('../assets/plastic.png')} style={StyleSell.icon} />
-                            </View>
-                        </View>
-                    </View>
                     <View style={StyleSell.boxCategori}>
                         <Text style={StyleSell.txt}>Note Categori ID :</Text>
                         <View style={StyleSell.boxtxt}>
