@@ -9,8 +9,8 @@ class DashboardP1 extends React.Component{
         super();
         this.state = {
             token: '',
-            data: '',
-            user: '',
+            data: [],
+            user: {},
         }
     }
 
@@ -35,7 +35,7 @@ class DashboardP1 extends React.Component{
         })
             .then((response) => response.json())
             .then((respon) => {
-                console.log("==> ambil data Pengurus 1 : " + respon)
+                console.log("==> ambil data Pengurus 1 : " + JSON.stringify(respon))
                 this.setState({
                     data: respon.data,
                     user: respon.user
@@ -61,7 +61,10 @@ class DashboardP1 extends React.Component{
                 </View>
                 <View style={StyleDashP1.viewLine} />
                 <View style={StyleDashP1.boxMinta}>
-                    <Text style={StyleDashP1.txtMinta}>{this.state.data}</Text>
+                    {this.state.data === "belum ada permintaan penjemputan" ? 
+                    <Text style={StyleDashP1.txtMinta}>Belum ada penjemputan</Text> :
+                    <Text style={StyleDashP1.txtMinta}>Lagi maintanance</Text>
+                }
                 </View>
             </View>
         )
